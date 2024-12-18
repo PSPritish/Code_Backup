@@ -9,30 +9,24 @@ void solve()
     int n;
     cin >> n;
     vector<int> a(n);
-    map<int, int> freq;
-    vector<pair<int, int>> v;
+    int freq[100100];
+    memset(freq, 0, sizeof(freq));
+    int b = 0, cnt = 0;
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
         freq[a[i]]++;
-    }
-    for (auto i : freq)
-    {
-        v.push_back({i.second, i.first});
-    }
-    sort(v.begin(), v.end());
-    
-    int x{0}, y{0};
-    for(auto &i: v){
-        if(i.first == 1){
-            x++;
+        if (a[i] > b)
+        {
+            cnt++;
         }
-        else{
-            y++;
+        if(cnt > b){
+            b++;
+            cnt -= freq[b];
         }
+        cout<<b<<" ";
     }
-    
-    cout << ceil(x / 2.0) * 2 + y << endl;
+    cout<<endl;
 }
 
 signed main()
