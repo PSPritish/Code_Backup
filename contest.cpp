@@ -1,38 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long int
-#define ld long double
+#define int long long
 #define endl "\n"
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    map<int, int> freq;
-    vector<pair<int, int>> v;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-        freq[a[i]]++;
-    }
-    for (auto i : freq)
-    {
-        v.push_back({i.second, i.first});
-    }
-    sort(v.begin(), v.end());
-    
-    int x{0}, y{0};
-    for(auto &i: v){
-        if(i.first == 1){
-            x++;
-        }
-        else{
-            y++;
-        }
-    }
-    
-    cout << ceil(x / 2.0) * 2 + y << endl;
+    cout << "Hello World" << endl;
 }
 
 signed main()
@@ -40,9 +13,12 @@ signed main()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
+
     int t = 1;
-    cin >> t;
+    // cin >> t;
 
     while (t--)
+    {
         solve();
+    }
 }
